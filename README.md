@@ -109,25 +109,6 @@ instance.destroy();
 }
 ```
 
-### 自定义样式
-
-您可以通过 CSS 覆盖默认样式：
-
-```css
-.my-fixed-nav {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid #eee;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-```
-
-### 可选样式类
-
-- `.scroll-fixed-transition` - 添加过渡动画
-- `.scroll-fixed-shadow` - 添加阴影效果
-- `.scroll-fixed-blur` - 添加背景模糊效果
-
 ## API 文档
 
 ### ScrollToFixed 类
@@ -213,25 +194,3 @@ dist/
 - **语言**: TypeScript
 - **样式**: SCSS
 - **包管理**: npm
-
-## 浏览器支持
-
-- Chrome 61+
-- Firefox 60+
-- Safari 10.1+
-- Edge 79+
-
-## 许可证
-
-MIT License
-
-## 更新日志
-
-### v1.0.0
-- ✅ 实现顶部和底部滚动固定功能
-- ✅ 支持 ESM 模块化构建
-- ✅ 添加 SCSS 样式系统
-- ✅ 支持窗口缩放和调整大小
-- ✅ 提供完整的测试案例
-- ✅ 修复事件监听器管理问题
-- ✅ 修复窗口缩放时宽度恢复问题
