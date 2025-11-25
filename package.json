@@ -1,0 +1,42 @@
+{
+  "name": "scroll-to-fixed",
+  "version": "1.0.0",
+  "description": "A scroll-to-fixed library that makes elements fixed when scrolled out of view",
+  "type": "module",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "browser": "dist/index.browser.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.browser.js",
+      "browser": "./dist/index.browser.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "dev": "rimraf dist && rspack build --config rspack.config.cjs --mode develope --watch",
+    "build": "rimraf dist && rspack build --config rspack.config.cjs --mode production",
+    "test": "npx serve ."
+  },
+  "keywords": [
+    "scroll",
+    "fixed",
+    "sticky",
+    "esm"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@rspack/cli": "^1.0.0",
+    "@rspack/core": "^1.0.0",
+    "@types/node": "^24.10.1",
+    "css-loader": "^6.8.1",
+    "mini-css-extract-plugin": "^2.9.4",
+    "rimraf": "^5.0.10",
+    "sass": "^1.94.2",
+    "sass-loader": "^16.0.6",
+    "style-loader": "^3.3.3",
+    "typescript": "^5.9.3"
+  }
+}

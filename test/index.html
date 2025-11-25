@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>滚动固定功能测试</title>
+  <link rel="stylesheet" href="../dist/index.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="header">
+    <h1>滚动固定功能演示</h1>
+    <p>测试顶部和底部固定效果</p>
+  </div>
+
+  <nav class="nav" id="mainNav">
+    <div class="nav-content">
+      <div class="logo">ScrollToFixed</div>
+      <ul class="nav-links">
+        <li><a href="#home">首页</a></li>
+        <li><a href="#about">关于</a></li>
+        <li><a href="#services">服务</a></li>
+        <li><a href="#contact">联系</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="content">
+    <div class="test-info">
+      <h4>测试说明</h4>
+      <p>• 顶部固定：向下滚动时导航栏固定在顶部</p>
+      <p>• 底部固定：当元素从底部滚动离开可视区域时固定在底部</p>
+      <p>• 页面加载时自动启用所有固定功能</p>
+    </div>
+
+    <div class="demo-controls">
+      <h3>顶部固定控制</h3>
+      <div class="control-group">
+        <button id="initTopBtn">初始化顶部固定</button>
+        <button id="destroyTopBtn" class="destroy">销毁顶部固定</button>
+        <button id="updateTopBtn">更新顶部配置</button>
+      </div>
+      <div class="status" id="topStatus">状态: 未初始化</div>
+    </div>
+
+    <div class="bottom-controls">
+      <h3>底部固定控制</h3>
+      <div class="control-group">
+        <button id="initBottomBtn">初始化底部固定</button>
+        <button id="destroyBottomBtn" class="destroy">销毁底部固定</button>
+        <button id="updateBottomBtn">更新底部配置</button>
+      </div>
+      <div class="bottom-status" id="bottomStatus">状态: 未初始化</div>
+    </div>
+
+    <div class="section">
+      <h2>功能说明</h2>
+      <p>这是一个滚动固定功能的演示页面，支持顶部和底部两种固定方式。</p>
+      <p>当您向下滚动页面时，导航栏会在滚动出视野范围时自动固定在顶部。</p>
+      <p>当您滚动到页面底部时，页脚会自动固定在底部。</p>
+    </div>
+
+    <div class="section">
+      <h2>技术特性</h2>
+      <p>• 使用 ESM 模块化构建</p>
+      <p>• 支持顶部和底部固定</p>
+      <p>• 支持自定义偏移量</p>
+      <p>• 自动创建占位元素保持布局稳定</p>
+      <p>• 支持动态配置更新</p>
+      <p>• 完整的销毁和清理机制</p>
+    </div>
+
+    <!-- 添加足够的内容来测试滚动 -->
+    <div class="section">
+      <h2>测试内容区域</h2>
+      <p>这部分内容用于测试滚动效果。请向下滚动页面来观察导航栏的固定行为。</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua.</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+    </div>
+
+    <div class="section">
+      <h2>更多内容</h2>
+      <p>继续向下滚动以测试固定效果...</p>
+      <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+    </div>
+
+    <div class="section">
+      <h2>底部固定测试区域</h2>
+      <p>这部分内容用于测试底部固定功能。当页脚从底部滚动离开可视区域时，它会固定在底部。</p>
+      <p>请向下滚动页面，当页脚从底部离开可视区域时，它会固定在页面底部。</p>
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua.</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+
+    <div class="section">
+      <h2>最后一部分</h2>
+      <p>这是页面的最后一部分内容，用于确保有足够的滚动空间来测试固定功能。</p>
+      <p>Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
+        explicabo.</p>
+    </div>
+  </div>
+
+  <div class="footer" id="bottomFooter" data-position="bottom">
+    <p>滚动固定功能演示 &copy; 2025</p>
+    <p>页脚 - 测试底部固定功能</p>
+  </div>
+
+  <script type="module" src="test.js"></script>
+</body>
+
+</html>
