@@ -12,6 +12,11 @@
       "require": "./dist/index.browser.js",
       "browser": "./dist/index.browser.js",
       "default": "./dist/index.js"
+    },
+    "./dist/index.css": {
+      "import": "./dist/index.css",
+      "require": "./dist/index.css",
+      "default": "./dist/index.css"
     }
   },
   "scripts": {
