@@ -1,0 +1,74 @@
+/**
+ * 滚动固定功能默认样式 - CSS 版本
+ * 用户可以通过 .scroll-fixed 类名自定义样式
+ */
+
+/* CSS 变量定义 */
+:root {
+  --scroll-fixed-z-index: 199;
+  --scroll-fixed-transition-duration: 0.3s;
+  --scroll-fixed-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --scroll-fixed-blur-amount: 10px;
+}
+
+/* 基础样式 */
+.scroll-fixed {
+  /* 默认样式 - 用户可以通过 CSS 覆盖这些样式 */
+  position: fixed;
+  z-index: var(--scroll-fixed-z-index);
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+  top: 0;
+  bottom: auto;
+}
+
+/* 顶部固定时的默认样式 */
+.scroll-fixed[data-position="top"] {
+  top: 0;
+  bottom: auto;
+}
+
+/* 底部固定时的默认样式 */
+.scroll-fixed[data-position="bottom"] {
+  top: auto;
+  bottom: 0;
+}
+
+/* 响应式设计支持 */
+@media (max-width: 768px) {
+  .scroll-fixed {
+    /* 在移动设备上可能需要调整样式 */
+    /* 例如：减少 z-index 或调整位置 */
+  }
+}
+
+/* 过渡动画支持（可选） */
+.scroll-fixed-transition {
+  transition: all var(--scroll-fixed-transition-duration) ease-in-out;
+}
+
+/* 阴影效果（可选） */
+.scroll-fixed-shadow {
+  box-shadow: var(--scroll-fixed-shadow);
+}
+
+/* 背景模糊效果（可选） */
+.scroll-fixed-blur {
+  backdrop-filter: blur(var(--scroll-fixed-blur-amount));
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* 现代浏览器支持的 backdrop-filter 回退 */
+@supports not (backdrop-filter: blur(10px)) {
+  .scroll-fixed-blur {
+    background-color: rgba(255, 255, 255, 0.95);
+  }
+}
+
+/* 深色模式支持（可选） */
+@media (prefers-color-scheme: dark) {
+  .scroll-fixed-blur {
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+}

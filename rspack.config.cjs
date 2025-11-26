@@ -57,14 +57,21 @@ const baseConfig = {
   resolve: {
     extensions: [".ts", ".js", ".scss"],
   },
+  devtool: "source-map",
   plugins: [new rspack.CssExtractRspackPlugin({})],
+  optimization: {
+    minimize: true,
+    minimizer: [
+      new rspack.SwcJsMinimizerRspackPlugin(),
+      new rspack.LightningCssMinimizerRspackPlugin(),
+    ],
+  },
 };
 
 // 开发配置
 const devConfig = {
   ...baseConfig,
   mode: "development",
-  devtool: "source-map",
   output: {
     ...baseConfig.output,
     filename: "[name].js",
@@ -81,7 +88,6 @@ const devConfig = {
 const esmConfig = {
   ...baseConfig,
   mode: "production",
-  devtool: false,
   output: {
     ...baseConfig.output,
     filename: "[name].js",
@@ -92,17 +98,12 @@ const esmConfig = {
   experiments: {
     outputModule: true,
   },
-  optimization: {
-    minimize: true,
-    minimizer: [new rspack.SwcJsMinimizerRspackPlugin()],
-  },
 };
 
 // 生产配置 - Browser 格式
 const browserConfig = {
   ...baseConfig,
   mode: "production",
-  devtool: false,
   output: {
     ...baseConfig.output,
     filename: "[name].browser.js",
@@ -111,10 +112,6 @@ const browserConfig = {
       type: "umd",
     },
     globalObject: "window",
-  },
-  optimization: {
-    minimize: true,
-    minimizer: [new rspack.SwcJsMinimizerRspackPlugin()],
   },
 };
 
